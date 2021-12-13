@@ -1,6 +1,23 @@
-# Getting Started with Create React App
+# Oracle Challenge Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In this project we present de UI for the oracle challenge. It is a ReactJS project, and it contains the components to call via REST API the other module
+of the challenge, the oracle-challenge-app.
+
+Please notice that there are two docker files in the root proyect:
+
+Dockerfile -> Allows you to build a docker image from the current source files.
+
+docker-compose.yaml -> Allows you to build both images: current project (frontend) + backend project (oracle-challenge-app). Keep in mind that in order to
+perform integration tests of the project, it would be necessary to deploy both proyects in your local machine.
+
+Please find attached in the source folder the classes diagram, it just consists of four classes:
+
+- App: The main Application. Loads the current list of tasks.
+- TaskContainer: Class that contains the details of a tasks, with actions over this tasks: Delete or Edit.
+- AddTaskForm: Class that contains a form to create a new task
+- EditTaskForm: Class that contains a form to edit an existing task.
+
+Besides there is a file that contains the functions to addTask, EditTask, DeleteTask and getTasks. It is the file DataStore, that contains just the request functions.
 
 ## Available Scripts
 
@@ -84,3 +101,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+### Docker Scripts
+
+### `sudo docker build -f Dockerfile -t oracle-challenge-frontend .` to build the docker image
+
+### `sudo docker run -p 3000:3000 oracle-challenge-frontend` to run the docker image for frontend project
+
+### `sudo docker-compose up` to build both images (frontend + backend) and run them
