@@ -1,4 +1,4 @@
-# Oracle Challenge Frontend
+# Task management system - ORA Challenge
 
 In this project we present de UI for the oracle challenge. It is a ReactJS project, and it contains the components to call via REST API the other module
 of the challenge, the oracle-challenge-app.
